@@ -1,1 +1,36 @@
-Este é o modelo de README.md ideal para a Parte 2 do seu projeto. Ele foca na preparação dos dados para Machine Learning, destacando a limpeza final e a seleção de atributos (Feature Selection).🛠️ Telecom X: Preparação de Dados e Feature Selection (Parte 2)📌 Visão GeralNesta segunda etapa do desafio, o foco sai da análise exploratória e entra na engenharia de dados para modelagem. O objetivo é refinar o dataset extraído na Fase 1, eliminando ruídos e garantindo que apenas informações com poder preditivo real sejam enviadas para os algoritmos de Inteligência Artificial.🎯 Objetivos desta EtapaCarga de Dados Tratados: Importação do arquivo .csv consolidado na etapa anterior.Remoção de Identificadores: Eliminação da coluna customerID. Como IDs são únicos e aleatórios, eles não carregam padrões estatísticos e podem causar overfitting.Refinamento de Atributos: Garantir que colunas numéricas e categóricas estejam prontas para a próxima fase (Encoding).🗂️ Estrutura do Dataset PreditivoApós a limpeza, o dataset mantém as seguintes categorias de recursos (features):CategoriaDescriçãoExemplos de ColunasDemográficoPerfil do clienteSeniorCitizen, Partner, DependentsServiçosProdutos contratadosInternetService, TechSupport, StreamingTVContratoDetalhes da contaContract, PaperlessBilling, PaymentMethodFinanceiroMétricas de valortenure, MonthlyCharges, TotalChargesAlvo (Target)O que queremos preverChurn🛠️ Como reproduzir esta etapaO script principal realiza a seguinte lógica:Carrega o arquivo telecom_x_limpo.csv.Executa o comando df.drop(columns=['customerID']).Valida se não restaram valores nulos (NaN) que possam travar o treinamento do modelo.💡 Próximos Passos (Feature Engineering)Para que os modelos matemáticos funcionem, o próximo passo será:Encoding: Transformar variáveis de texto (ex: "Yes/No") em variáveis numéricas (1/0).Normalização: Ajustar a escala de colunas como TotalCharges para que valores altos não "viciem" o modelo.
+Este é o modelo definitivo de README.md para o seu repositório no GitHub ou para a célula de abertura do seu notebook. Ele foi estruturado para demonstrar não apenas o código, mas o seu raciocínio analítico e a capacidade de gerar valor de negócio.
+
+📡 Telecom X: Previsão de Evasão de Clientes (Churn Prediction)
+📋 Visão Geral do Projeto
+Este projeto aborda um dos problemas mais críticos para empresas de serviços: a evasão de clientes (Churn). Utilizando dados da Telecom X, desenvolvemos um pipeline completo de Ciência de Dados para identificar padrões de comportamento e construir modelos preditivos capazes de antecipar quais clientes têm maior probabilidade de cancelar seus serviços.
+
+🛠️ Pipeline de Desenvolvimento
+1. Engenharia e Limpeza de Dados
+Ingestão: Consumo de dados via API JSON e normalização de estruturas aninhadas.
+
+Saneamento: Tratamento de valores nulos em faturas totais e correção de tipos de dados.
+
+Feature Selection: Remoção de identificadores únicos (customerID) para evitar ruído nos modelos.
+
+2. Preparação para Machine Learning
+Encoding: Transformação de variáveis categóricas (Contratos, Serviços, Pagamentos) em dados numéricos via One-Hot Encoding.
+
+Escalonamento: Aplicação de StandardScaler para normalizar as grandezas financeiras.
+
+Balanceamento (SMOTE): Tratamento do desequilíbrio de classes (73% ativos vs 26% evasão) através da geração de dados sintéticos da classe minoritária.
+
+3. Modelagem e Avaliação
+Comparamos dois modelos com abordagens distintas:
+
+Regressão Logística: Focada em interpretabilidade e probabilidade linear.
+
+Random Forest: Focada em capturar relações não-lineares complexas.
+
+Métricas utilizadas: Acurácia, Precisão, F1-Score e, principalmente, Recall (essencial para capturar o maior número possível de evasões reais).
+
+📈 Principais Descobertas (Insights de Negócio)
+O Gatilho do Churn: Clientes com contratos Mês a Mês são os mais propensos a sair.
+
+Risco Tecnológico: Usuários de Fibra Óptica possuem taxa de evasão superior à de DSL, indicando problemas de custo ou qualidade técnica.
+
+Âncora de Retenção: O Suporte Técnico e o Tempo de Casa (Tenure) são os fatores que mais protegem a base de clientes.
